@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.btn{
+    color: rgb(255, 145, 0); 
+    background-color: black;
+    width: 80px; 
+    height: 40px;
+}
+.container{
+    height: 580px;
+    margin: 0;
+    background-color: rgb(229, 229, 229);
+    display: flex;
+    gap: 2rem;
+    align-items: center; 
+    justify-content: center;
+}
+</style>
+
+<body>
+    <div style="display:flex;justify-content:center;">COUNTER</div>
+<div class="container">
+    <button class="btn" id="counter1">Dec</button>
+    <div id="display">1</div>
+    <button class="btn" id="counter">Inc</button>
+    
+</div>
+</body>
+
+<script>
+const addCounter = document.getElementById('counter')
+const subCounter = document.getElementById('counter1')
+const counterDisplay = document.getElementById('display')
+let count = 0
+
+addCounter.addEventListener('click',()=>{
+   const timer =  setInterval(()=>{
+    count++;
+    if(count>=10){
+        clearInterval(timer)
+    }
+    counterDisplay.innerHTML = count;  
+   },200)
+})
+
+
+subCounter.addEventListener('click',()=>{
+    
+    const decTimer = setInterval(()=>{
+        if(count>=1){
+            count--;
+        }else{
+            clearInterval(decTimer)
+        }
+        counterDisplay.innerHTML = count;
+    },200)
+    
+    
+    
+    
+})
+
+
+</script>
+
+
+
+
+
+
+</html>
